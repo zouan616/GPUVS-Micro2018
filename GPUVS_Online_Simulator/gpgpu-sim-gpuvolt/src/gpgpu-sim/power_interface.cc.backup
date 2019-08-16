@@ -1,0 +1,267 @@
+// Copyright (c) 2009-2011, Tor M. Aamodt, Ahmed El-Shafiey, Tayler Hetherington
+// The University of British Columbia
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice, this
+// list of conditions and the following disclaimer.
+// Redistributions in binary form must reproduce the above copyright notice, this
+// list of conditions and the following disclaimer in the documentation and/or
+// other materials provided with the distribution.
+// Neither the name of The University of British Columbia nor the names of its
+// contributors may be used to endorse or promote products derived from this
+// software without specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+// SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+// CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+// OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#include "power_interface.h"
+#include "addon.h"
+#include <cassert>
+
+AddOn * customized_addon = NULL;
+extern float avg_pipe_duty;
+extern float per_core_pipe_duty[100];
+extern unsigned core_idle[100];
+FILE * pipe_dump_file = NULL;
+unsigned kernel_count=0;
+unsigned long long mcpat_cycle_count = 0;
+bool dump_pipeline=false;
+
+void init_mcpat(const gpgpu_sim_config &config, class gpgpu_sim_wrapper *wrapper, unsigned stat_sample_freq, unsigned tot_inst, unsigned inst){
+
+	wrapper->init_mcpat(config.g_power_config_name, config.g_power_filename, config.g_power_trace_filename,
+	    			config.g_metric_trace_filename,config.g_steady_state_tracking_filename,config.g_power_simulation_enabled,
+	    			config.g_power_trace_enabled,config.g_steady_power_levels_enabled,config.g_power_per_cycle_dump,
+	    			config.gpu_steady_power_deviation,config.gpu_steady_min_period,config.g_power_trace_zlevel,
+	    			tot_inst+inst,stat_sample_freq
+	    			);
+
+}
+
+void mcpat_cycle(const gpgpu_sim_config &config, const struct shader_core_config *shdr_config, class gpgpu_sim_wrapper *wrapper, class power_stat_t *power_stats, unsigned stat_sample_freq, unsigned tot_cycle, unsigned cycle, unsigned tot_inst, unsigned inst){
+
+	static bool mcpat_init=true;
+	mcpat_cycle_count  += 1;
+	customized_addon->global_cycle_count = mcpat_cycle_count;
+
+
+	if (cycle == 1) { // a new  kernel launch
+
+		wrapper->set_num_core(power_stats->m_config->num_shader());
+
+		unsigned tmp = 0;
+		tmp += 1;
+		printf("a new kernel\n");
+		kernel_count+=1;
+
+		if (kernel_count == 30 || kernel_count == 1) {
+			//customized_addon->pipe_dump_file = fopen("pipe_dump.log","w");
+			//customized_addon->dump_pipeline = true;
+			customized_addon->pipe_dump_file = NULL;
+			customized_addon->dump_pipeline = false;
+		} else {
+			dump_pipeline = false;
+			if ( pipe_dump_file != NULL) {
+				fclose(pipe_dump_file);
+				pipe_dump_file = NULL;
+			}
+
+			customized_addon->dump_pipeline = false;
+			if ( customized_addon->pipe_dump_file != NULL) {
+				fclose(customized_addon->pipe_dump_file);
+				customized_addon->pipe_dump_file = NULL;
+			}
+
+		}
+
+	}
+
+	if(mcpat_init){ // If first cycle, don't have any power numbers yet
+		mcpat_init=false;
+		//return;
+	}
+
+	if ( power_stats->get_l1d_read_misses() > 100 ) { // 
+		unsigned tmp = 0;
+		tmp += 1;
+		printf("miss bigger than 100\n");
+
+		printf("\n===============\n");
+	   	for(unsigned i=0; i<power_stats->m_config->num_shader();i++){
+			printf("new %d, old %d\n",power_stats->pwr_mem_stat->l1d_read_miss[0][i],power_stats->pwr_mem_stat->l1d_read_miss[1][i]);
+	   	}
+		printf("===============\n\n");
+
+	}
+
+	
+	float elapsed_cycles = (float) customized_addon->cycle;
+	stat_sample_freq = customized_addon->cycle;
+	assert( elapsed_cycles <= 10);
+	//if ((tot_cycle+cycle) % stat_sample_freq == 0) {
+	if ( 1 ) {
+
+		wrapper->set_inst_power(shdr_config->gpgpu_clock_gated_lanes,
+				stat_sample_freq, stat_sample_freq,
+				power_stats->get_total_inst(), power_stats->get_total_int_inst(),
+				power_stats->get_total_fp_inst(), power_stats->get_l1d_read_accesses(),
+				power_stats->get_l1d_write_accesses(), power_stats->get_committed_inst());
+
+		// Single RF for both int and fp ops
+		wrapper->set_regfile_power(power_stats->get_regfile_reads(), power_stats->get_regfile_writes(), power_stats->get_non_regfile_operands());
+
+		//Instruction cache stats
+		wrapper->set_icache_power(power_stats->get_inst_c_hits(), power_stats->get_inst_c_misses());
+
+		//Constant Cache, shared memory, texture cache
+		wrapper->set_ccache_power(power_stats->get_constant_c_hits(), power_stats->get_constant_c_misses());
+		wrapper->set_tcache_power(power_stats->get_texture_c_hits(), power_stats->get_texture_c_misses());
+		wrapper->set_shrd_mem_power(power_stats->get_shmem_read_access());
+
+		wrapper->set_l1cache_power(power_stats->get_l1d_read_hits(), power_stats->get_l1d_read_misses(),
+				power_stats->get_l1d_write_hits(), power_stats->get_l1d_write_misses());
+
+
+		wrapper->set_l2cache_power(power_stats->get_l2_read_hits(), power_stats->get_l2_read_misses(),
+				power_stats->get_l2_write_hits(), power_stats->get_l2_write_misses());
+
+
+		float active_sms=(*power_stats->m_active_sms)/stat_sample_freq;
+		float num_cores = shdr_config->num_shader();
+		float num_idle_core = num_cores - active_sms;
+		wrapper->set_idle_core_power(num_idle_core);
+
+		//pipeline power - pipeline_duty_cycle *= percent_active_sms;
+		float pipeline_duty_cycle=((*power_stats->m_average_pipeline_duty_cycle/( stat_sample_freq)) < 0.8)?((*power_stats->m_average_pipeline_duty_cycle)/stat_sample_freq):0.8;
+		//wrapper->set_duty_cycle_power(pipeline_duty_cycle);
+		wrapper->set_duty_cycle_power(avg_pipe_duty);
+
+		//Memory Controller
+		wrapper->set_mem_ctrl_power(power_stats->get_dram_rd(), power_stats->get_dram_wr(), power_stats->get_dram_pre());
+
+		//Execution pipeline accesses
+		//FPU (SP) accesses, Integer ALU (not present in Tesla), Sfu accesses
+		wrapper->set_exec_unit_power(power_stats->get_tot_fpu_accessess(elapsed_cycles), power_stats->get_ialu_accessess(elapsed_cycles), power_stats->get_tot_sfu_accessess(elapsed_cycles));
+
+		//Average active lanes for sp and sfu pipelines
+		float avg_sp_active_lanes=(power_stats->get_sp_active_lanes())/stat_sample_freq;
+		float avg_sfu_active_lanes=(power_stats->get_sfu_active_lanes())/stat_sample_freq;
+		assert(avg_sp_active_lanes<=32);
+		assert(avg_sfu_active_lanes<=32);
+		wrapper->set_active_lanes_power((power_stats->get_sp_active_lanes())/stat_sample_freq,
+				(power_stats->get_sfu_active_lanes())/stat_sample_freq);
+
+
+		//NoC stats (32/4)--> Number of 32 bit words in 32B block
+		//unsigned l2cache_tot_access = power_stats->get_l2_read_accesses() +  power_stats->get_l2_write_accesses();
+		unsigned n_icnt_simt_to_mem = power_stats->get_icnt_simt_to_mem(); // # flits from SIMT clusters to memory partitions
+		unsigned n_icnt_mem_to_simt = power_stats->get_icnt_mem_to_simt(); // # flits from memory partitions to SIMT clusters
+		//wrapper->set_NoC_power((double)(n_icnt_mem_to_simt + n_icnt_simt_to_mem)); // Number of flits traversing the interconnect
+		wrapper->set_NoC_power(n_icnt_mem_to_simt, n_icnt_simt_to_mem); // Number of flits traversing the interconnect
+
+		wrapper->compute();
+
+		float core_power=0;
+		wrapper->clear_per_core_stats();
+		float num_core=(float) power_stats->m_config->num_shader();
+		if (1) {
+		for (unsigned core_id = 0; core_id < power_stats->m_config->num_shader(); core_id++) {
+
+			wrapper->set_core_inst_power(shdr_config->gpgpu_clock_gated_lanes,
+					stat_sample_freq, stat_sample_freq,
+											power_stats->get_core_inst(core_id), 
+											power_stats->get_core_int_inst(core_id),
+											power_stats->get_core_fp_inst(core_id), 
+											power_stats->get_core_l1d_read_accesses(core_id),
+											power_stats->get_core_l1d_write_accesses(core_id), 
+											power_stats->get_core_committed_inst(core_id));
+			wrapper->set_core_regfile_power(power_stats->get_core_regfile_reads(core_id), 
+											power_stats->get_core_regfile_writes(core_id), 
+											power_stats->get_core_non_regfile_operands(core_id));
+			wrapper->set_core_icache_power(power_stats->get_core_inst_c_hits(core_id), 
+											power_stats->get_core_inst_c_misses(core_id));
+			wrapper->set_core_ccache_power(power_stats->get_core_constant_c_hits(core_id), 
+											power_stats->get_core_constant_c_misses(core_id));
+			wrapper->set_core_tcache_power(power_stats->get_core_texture_c_hits(core_id), 
+											power_stats->get_core_texture_c_misses(core_id));
+			wrapper->set_core_shrd_mem_power(power_stats->get_core_shmem_read_access(core_id));
+			wrapper->set_core_l1cache_power(power_stats->get_core_l1d_read_hits(core_id), 
+											power_stats->get_core_l1d_read_misses(core_id),
+											power_stats->get_core_l1d_write_hits(core_id), 
+											power_stats->get_core_l1d_write_misses(core_id));
+			wrapper->set_core_l2cache_power(power_stats->get_l2_read_hits()/num_core, 
+											power_stats->get_l2_read_misses()/num_core,
+											power_stats->get_l2_write_hits()/num_core, 
+											power_stats->get_l2_write_misses()/num_core);
+			wrapper->set_core_idle_core_power(core_idle[core_id]);
+			wrapper->set_core_duty_cycle_power(per_core_pipe_duty[core_id]);
+			wrapper->set_core_mem_ctrl_power(power_stats->get_dram_rd()/num_core, 
+											power_stats->get_dram_wr()/num_core, 
+											power_stats->get_dram_pre()/num_core);
+			wrapper->set_core_exec_unit_power(power_stats->get_core_fpu_accessess(core_id,elapsed_cycles), 
+											power_stats->get_core_ialu_accessess(core_id, elapsed_cycles), 
+											power_stats->get_core_sfu_accessess(core_id, elapsed_cycles));
+			float avg_sp_active_lanes=(power_stats->get_sp_active_lanes())/stat_sample_freq;
+			float avg_sfu_active_lanes=(power_stats->get_sfu_active_lanes())/stat_sample_freq;
+			assert(avg_sp_active_lanes<=32);
+			assert(avg_sfu_active_lanes<=32);
+			wrapper->set_core_active_lanes_power((power_stats->get_sp_active_lanes())/stat_sample_freq,
+											(power_stats->get_sfu_active_lanes())/stat_sample_freq);
+			unsigned n_icnt_simt_to_mem = power_stats->get_icnt_simt_to_mem(); // # flits from SIMT clusters to memory partitions
+			unsigned n_icnt_mem_to_simt = power_stats->get_icnt_mem_to_simt(); // # flits from memory partitions to SIMT clusters
+			wrapper->set_core_NoC_power(n_icnt_mem_to_simt/num_core, 
+										n_icnt_simt_to_mem/num_core); // Number of flits traversing the interconnect
+			wrapper->core_compute(core_id);
+			//core_power+=wrapper->core_proc->core.rt_power.readOp.dynamic;
+			core_power+=wrapper->per_core_power_record[core_id];
+			//wrapper->record_core_power(core_id);
+		
+		}
+		}
+		//wrapper->check_per_core_stats();
+
+		//assert("Per core power doesn't match!" && wrapper->sanity_check(wrapper->proc->core.rt_power.readOp.dynamic, core_power));
+		double orginal_processor_core_power = wrapper->proc->core.rt_power.readOp.dynamic;
+ 		orginal_processor_core_power += ( wrapper->proc->mc->frontend->PRT->power_t.readOp.dynamic + wrapper->proc->mc->frontend->threadMasks->power_t.readOp.dynamic+ wrapper->proc->mc->frontend->PRC->power_t.readOp.dynamic)/(wrapper->proc->cores[0]->executionTime); // mcl
+		if ( !wrapper->sanity_check(orginal_processor_core_power, core_power)) {
+			fprintf(stderr, "ERROR, Per core power doesn't match!\n");
+			fprintf(stderr, "processor core power %f, sum of other cores %f\n", wrapper->proc->core.rt_power.readOp.dynamic, core_power);
+			for(unsigned i = 0; i<num_core; i++) {
+				fprintf(stderr, "%.2f ", wrapper->per_core_power_record[i]);
+			}
+			fprintf(stderr, "\n");
+		}
+
+		//double static_pwr_t=(wrapper->proc->XML->sys.longer_channel_device? wrapper->proc->power.readOp.longer_channel_leakage:wrapper->proc->power.readOp.leakage)+wrapper->proc->power.readOp.gate_leakage;
+		//double tot_pwr_t = static_pwr_t + wrapper->proc->rt_power.readOp.dynamic;
+		customized_addon->power_cycle(wrapper);
+
+
+		wrapper->update_components_power();
+		wrapper->print_trace_files();
+		power_stats->save_stats();
+
+		wrapper->detect_print_steady_state(0,tot_inst+inst);
+
+		wrapper->power_metrics_calculations();
+
+
+		wrapper->dump();
+	}
+	//wrapper->close_files();
+}
+
+void mcpat_reset_perf_count(class gpgpu_sim_wrapper *wrapper, bool do_print){
+	wrapper->reset_counters(do_print);
+}

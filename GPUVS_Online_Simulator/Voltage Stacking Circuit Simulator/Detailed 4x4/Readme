@@ -1,0 +1,3 @@
+1. All switches cannot be open or close at the same time.
+2. When the circuit simulator does not stable, you can adjust the capacitor value or step length to solve this problem.
+3. use ".option trtol = 1" to avoid converge violation.

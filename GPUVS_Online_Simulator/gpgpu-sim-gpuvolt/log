@@ -1,0 +1,33 @@
+
+	Building GPGPU-Sim version 3.2.0+edits (build 15585) with CUDA version 4.0
+
+if [ ! -d lib/4000/release ]; then mkdir -p lib/4000/release; fi;
+if [ ! -d build/4000/release/libcuda ]; then mkdir -p build/4000/release/libcuda; fi;
+if [ ! -d build/4000/release/cuda-sim ]; then mkdir -p build/4000/release/cuda-sim; fi;
+if [ ! -d build/4000/release/cuda-sim/decuda_pred_table ]; then mkdir -p build/4000/release/cuda-sim/decuda_pred_table; fi;
+if [ ! -d build/4000/release/gpgpu-sim ]; then mkdir -p build/4000/release/gpgpu-sim; fi;
+if [ ! -d build/4000/release/libopencl ]; then mkdir -p build/4000/release/libopencl; fi;
+if [ ! -d build/4000/release/intersim ]; then mkdir -p build/4000/release/intersim; fi;
+if [ ! -d build/4000/release/cuobjdump_to_ptxplus ]; then mkdir -p build/4000/release/cuobjdump_to_ptxplus; fi;
+if [ ! -d /home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpuwattch//obj_opt ] && [ ! -n /home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpuwattch/ ]; then mkdir -p /home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpuwattch//obj_opt; fi;
+make -C ./src/cuda-sim/ depend
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/cuda-sim'
+touch Makefile.makedepend
+makedepend -fMakefile.makedepend -p../../build/4000/release/cuda-sim/ cuda_device_printf.cc cuda-sim.cc instructions.cc memory.cc ptx_ir.cc ptx_loader.cc ptx_parser.cc ptx_sim.cc ptx-stats.cc 2> /dev/null
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/cuda-sim'
+make -C ./src/cuda-sim/
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/cuda-sim'
+ar rcs ../../build/4000/release/cuda-sim/libgpgpu_ptx_sim.a ../../build/4000/release/cuda-sim/ptx.tab.o ../../build/4000/release/cuda-sim/lex.ptx_.o ../../build/4000/release/cuda-sim/ptxinfo.tab.o ../../build/4000/release/cuda-sim/lex.ptxinfo_.o ../../build/4000/release/cuda-sim/ptx_parser.o ../../build/4000/release/cuda-sim/ptx_loader.o ../../build/4000/release/cuda-sim/cuda_device_printf.o ../../build/4000/release/cuda-sim/instructions.o ../../build/4000/release/cuda-sim/cuda-sim.o ../../build/4000/release/cuda-sim/ptx_ir.o ../../build/4000/release/cuda-sim/ptx_sim.o  ../../build/4000/release/cuda-sim/memory.o ../../build/4000/release/cuda-sim/ptx-stats.o ../../build/4000/release/cuda-sim/decuda_pred_table/decuda_pred_table.o ../../build/4000/release/cuda-sim/ptx.tab.o ../../build/4000/release/cuda-sim/lex.ptx_.o ../../build/4000/release/cuda-sim/ptxinfo.tab.o ../../build/4000/release/cuda-sim/lex.ptxinfo_.o
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/cuda-sim'
+make -C ./src/gpgpu-sim/ depend
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpgpu-sim'
+touch Makefile.makedepend
+makedepend -fMakefile.makedepend -p../../build/4000/release/gpgpu-sim/ addrdec.cc dram.cc dram_sched.cc gpu-cache.cc gpu-misc.cc gpu-sim.cc histogram.cc icnt_wrapper.cc l2cache.cc mem_fetch.cc mem_latency_stat.cc power_interface.cc power_stat.cc scoreboard.cc shader.cc stack.cc stat-tool.cc visualizer.cc 2> /dev/null
+make[1]: `depend' is up to date.
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpgpu-sim'
+make -C ./src/gpgpu-sim/
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpgpu-sim'
+touch Makefile.makedepend
+makedepend -fMakefile.makedepend -p../../build/4000/release/gpgpu-sim/ addrdec.cc dram.cc dram_sched.cc gpu-cache.cc gpu-misc.cc gpu-sim.cc histogram.cc icnt_wrapper.cc l2cache.cc mem_fetch.cc mem_latency_stat.cc power_interface.cc power_stat.cc scoreboard.cc shader.cc stack.cc stat-tool.cc visualizer.cc 2> /dev/null
+g++ -lrt -ldl -rdynamic  -O3 -g3 -fPIC -Wall -DTRACING_ON=1 -std=c++0x -std=c++0x -I/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpuwattch/ -DGPGPUSIM_POWER_MODEL -o ../../build/4000/release/gpgpu-sim/shader.o -c shader.cc -lrt -ldl -rdynamic
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpgpu-sim'

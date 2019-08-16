@@ -1,0 +1,362 @@
+# DO NOT DELETE
+
+obj_opt/XML_Parse.o: /usr/include/stdio.h /usr/include/features.h
+obj_opt/XML_Parse.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/XML_Parse.o: /usr/include/wchar.h xmlParser.h /usr/include/stdlib.h
+obj_opt/XML_Parse.o: /usr/include/alloca.h XML_Parse.h /usr/include/string.h
+obj_opt/XML_Parse.o: /usr/include/xlocale.h
+obj_opt/array.o: cacti/area.h cacti/cacti_interface.h cacti/const.h
+obj_opt/array.o: /usr/include/stdint.h /usr/include/features.h
+obj_opt/array.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/array.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/array.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/array.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/array.o: /usr/include/math.h cacti/basic_circuit.h array.h
+obj_opt/array.o: basic_components.h XML_Parse.h xmlParser.h cacti/parameter.h
+obj_opt/array.o: cacti/area.h cacti/io.h cacti/const.h
+obj_opt/array.o: cacti/cacti_interface.h cacti/component.h cacti/parameter.h
+obj_opt/array.o: /usr/include/assert.h globalvar.h
+obj_opt/basic_components.o: basic_components.h XML_Parse.h
+obj_opt/basic_components.o: /usr/include/stdio.h /usr/include/features.h
+obj_opt/basic_components.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/basic_components.o: /usr/include/wchar.h xmlParser.h
+obj_opt/basic_components.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/basic_components.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/basic_components.o: cacti/parameter.h cacti/area.h cacti/const.h
+obj_opt/basic_components.o: /usr/include/stdint.h /usr/include/math.h
+obj_opt/basic_components.o: cacti/cacti_interface.h cacti/io.h
+obj_opt/basic_components.o: /usr/include/assert.h
+obj_opt/core.o: cacti/io.h cacti/const.h /usr/include/stdint.h
+obj_opt/core.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/core.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/core.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/core.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/core.o: /usr/include/wchar.h /usr/include/math.h
+obj_opt/core.o: cacti/cacti_interface.h cacti/parameter.h
+obj_opt/core.o: cacti/basic_circuit.h XML_Parse.h xmlParser.h
+obj_opt/core.o: /usr/include/assert.h core.h logic.h cacti/const.h
+obj_opt/core.o: cacti/component.h cacti/area.h basic_components.h
+obj_opt/core.o: cacti/parameter.h cacti/cacti_interface.h cacti/decoder.h
+obj_opt/core.o: cacti/component.h arch_const.h array.h interconnect.h
+obj_opt/core.o: cacti/subarray.h cacti/wire.h cacti/basic_circuit.h
+obj_opt/core.o: sharedcache.h cacti/area.h cacti/crossbar.h cacti/mat.h
+obj_opt/core.o: cacti/decoder.h cacti/wire.h cacti/subarray.h cacti/arbiter.h
+obj_opt/core.o: noc.h cacti/router.h cacti/crossbar.h cacti/arbiter.h
+obj_opt/interconnect.o: interconnect.h cacti/basic_circuit.h cacti/const.h
+obj_opt/interconnect.o: /usr/include/stdint.h /usr/include/features.h
+obj_opt/interconnect.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/interconnect.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/interconnect.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/interconnect.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/interconnect.o: /usr/include/math.h cacti/cacti_interface.h
+obj_opt/interconnect.o: basic_components.h XML_Parse.h xmlParser.h
+obj_opt/interconnect.o: cacti/parameter.h cacti/area.h cacti/io.h
+obj_opt/interconnect.o: cacti/component.h cacti/parameter.h
+obj_opt/interconnect.o: /usr/include/assert.h cacti/subarray.h
+obj_opt/interconnect.o: cacti/component.h cacti/cacti_interface.h
+obj_opt/interconnect.o: cacti/wire.h cacti/basic_circuit.h cacti/wire.h
+obj_opt/interconnect.o: globalvar.h
+obj_opt/iocontrollers.o: cacti/io.h cacti/const.h /usr/include/stdint.h
+obj_opt/iocontrollers.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/iocontrollers.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/iocontrollers.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/iocontrollers.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/iocontrollers.o: /usr/include/wchar.h /usr/include/math.h
+obj_opt/iocontrollers.o: cacti/cacti_interface.h cacti/parameter.h logic.h
+obj_opt/iocontrollers.o: cacti/const.h cacti/component.h cacti/area.h
+obj_opt/iocontrollers.o: basic_components.h XML_Parse.h xmlParser.h
+obj_opt/iocontrollers.o: cacti/parameter.h cacti/basic_circuit.h
+obj_opt/iocontrollers.o: cacti/cacti_interface.h cacti/decoder.h
+obj_opt/iocontrollers.o: cacti/component.h arch_const.h /usr/include/assert.h
+obj_opt/iocontrollers.o: iocontrollers.h array.h
+obj_opt/logic.o: logic.h cacti/const.h cacti/component.h cacti/parameter.h
+obj_opt/logic.o: cacti/area.h basic_components.h XML_Parse.h
+obj_opt/logic.o: /usr/include/stdio.h /usr/include/features.h
+obj_opt/logic.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/logic.o: /usr/include/wchar.h xmlParser.h /usr/include/stdlib.h
+obj_opt/logic.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/logic.o: /usr/include/xlocale.h cacti/parameter.h cacti/const.h
+obj_opt/logic.o: /usr/include/stdint.h /usr/include/math.h
+obj_opt/logic.o: cacti/cacti_interface.h cacti/io.h cacti/basic_circuit.h
+obj_opt/logic.o: cacti/cacti_interface.h cacti/decoder.h cacti/component.h
+obj_opt/logic.o: arch_const.h
+obj_opt/main.o: cacti/io.h cacti/const.h /usr/include/stdint.h
+obj_opt/main.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/main.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/main.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/main.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/main.o: /usr/include/wchar.h /usr/include/math.h
+obj_opt/main.o: cacti/cacti_interface.h xmlParser.h XML_Parse.h processor.h
+obj_opt/main.o: cacti/area.h cacti/basic_circuit.h cacti/decoder.h
+obj_opt/main.o: cacti/area.h cacti/component.h cacti/parameter.h
+obj_opt/main.o: cacti/parameter.h array.h basic_components.h cacti/const.h
+obj_opt/main.o: cacti/cacti_interface.h cacti/component.h cacti/arbiter.h
+obj_opt/main.o: /usr/include/assert.h cacti/mat.h cacti/decoder.h
+obj_opt/main.o: cacti/wire.h cacti/subarray.h core.h logic.h
+obj_opt/main.o: cacti/basic_circuit.h arch_const.h interconnect.h
+obj_opt/main.o: cacti/subarray.h cacti/wire.h sharedcache.h cacti/crossbar.h
+obj_opt/main.o: noc.h cacti/router.h cacti/crossbar.h cacti/arbiter.h
+obj_opt/main.o: memoryctrl.h iocontrollers.h ../gpgpu-sim/visualizer.h
+obj_opt/main.o: /usr/include/zlib.h /usr/include/zconf.h
+obj_opt/main.o: /usr/include/zlibdefs.h /usr/include/unistd.h
+obj_opt/main.o: /usr/include/getopt.h globalvar.h version.h
+obj_opt/memoryctrl.o: cacti/io.h cacti/const.h /usr/include/stdint.h
+obj_opt/memoryctrl.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/memoryctrl.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/memoryctrl.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/memoryctrl.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/memoryctrl.o: /usr/include/wchar.h /usr/include/math.h
+obj_opt/memoryctrl.o: cacti/cacti_interface.h cacti/parameter.h logic.h
+obj_opt/memoryctrl.o: cacti/const.h cacti/component.h cacti/area.h
+obj_opt/memoryctrl.o: basic_components.h XML_Parse.h xmlParser.h
+obj_opt/memoryctrl.o: cacti/parameter.h cacti/basic_circuit.h
+obj_opt/memoryctrl.o: cacti/cacti_interface.h cacti/decoder.h
+obj_opt/memoryctrl.o: cacti/component.h arch_const.h /usr/include/assert.h
+obj_opt/memoryctrl.o: memoryctrl.h array.h
+obj_opt/noc.o: cacti/io.h cacti/const.h /usr/include/stdint.h
+obj_opt/noc.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/noc.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/noc.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/noc.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/noc.o: /usr/include/wchar.h /usr/include/math.h
+obj_opt/noc.o: cacti/cacti_interface.h cacti/parameter.h
+obj_opt/noc.o: cacti/basic_circuit.h XML_Parse.h xmlParser.h
+obj_opt/noc.o: /usr/include/assert.h noc.h logic.h cacti/const.h
+obj_opt/noc.o: cacti/component.h cacti/area.h basic_components.h
+obj_opt/noc.o: cacti/parameter.h cacti/cacti_interface.h cacti/decoder.h
+obj_opt/noc.o: cacti/component.h arch_const.h array.h interconnect.h
+obj_opt/noc.o: cacti/subarray.h cacti/wire.h cacti/basic_circuit.h
+obj_opt/noc.o: cacti/router.h cacti/mat.h cacti/decoder.h cacti/wire.h
+obj_opt/noc.o: cacti/subarray.h cacti/crossbar.h cacti/arbiter.h
+obj_opt/processor.o: /usr/include/string.h /usr/include/features.h
+obj_opt/processor.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/processor.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/processor.o: /usr/include/wchar.h /usr/include/assert.h
+obj_opt/processor.o: cacti/parameter.h array.h basic_components.h XML_Parse.h
+obj_opt/processor.o: xmlParser.h /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/processor.o: cacti/parameter.h cacti/area.h cacti/const.h
+obj_opt/processor.o: /usr/include/stdint.h /usr/include/math.h
+obj_opt/processor.o: cacti/cacti_interface.h cacti/io.h cacti/const.h
+obj_opt/processor.o: cacti/cacti_interface.h cacti/component.h
+obj_opt/processor.o: cacti/basic_circuit.h processor.h cacti/area.h
+obj_opt/processor.o: cacti/basic_circuit.h cacti/decoder.h cacti/component.h
+obj_opt/processor.o: cacti/arbiter.h cacti/mat.h cacti/decoder.h cacti/wire.h
+obj_opt/processor.o: cacti/subarray.h core.h logic.h arch_const.h
+obj_opt/processor.o: interconnect.h cacti/subarray.h cacti/wire.h
+obj_opt/processor.o: sharedcache.h cacti/crossbar.h noc.h cacti/router.h
+obj_opt/processor.o: cacti/crossbar.h cacti/arbiter.h memoryctrl.h
+obj_opt/processor.o: iocontrollers.h ../gpgpu-sim/visualizer.h
+obj_opt/processor.o: /usr/include/zlib.h /usr/include/zconf.h
+obj_opt/processor.o: /usr/include/zlibdefs.h /usr/include/unistd.h
+obj_opt/processor.o: /usr/include/getopt.h version.h
+obj_opt/sharedcache.o: cacti/io.h cacti/const.h /usr/include/stdint.h
+obj_opt/sharedcache.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/sharedcache.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/sharedcache.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/sharedcache.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/sharedcache.o: /usr/include/wchar.h /usr/include/math.h
+obj_opt/sharedcache.o: cacti/cacti_interface.h cacti/parameter.h cacti/area.h
+obj_opt/sharedcache.o: array.h basic_components.h XML_Parse.h xmlParser.h
+obj_opt/sharedcache.o: cacti/const.h cacti/cacti_interface.h
+obj_opt/sharedcache.o: cacti/component.h cacti/parameter.h logic.h
+obj_opt/sharedcache.o: cacti/basic_circuit.h cacti/decoder.h
+obj_opt/sharedcache.o: cacti/component.h arch_const.h cacti/arbiter.h
+obj_opt/sharedcache.o: /usr/include/assert.h cacti/basic_circuit.h
+obj_opt/sharedcache.o: cacti/mat.h cacti/decoder.h cacti/wire.h
+obj_opt/sharedcache.o: cacti/subarray.h sharedcache.h cacti/area.h
+obj_opt/xmlParser.o: xmlParser.h /usr/include/stdlib.h
+obj_opt/xmlParser.o: /usr/include/features.h /usr/include/alloca.h
+obj_opt/xmlParser.o: /usr/include/wchar.h /usr/include/memory.h
+obj_opt/xmlParser.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/xmlParser.o: /usr/include/assert.h /usr/include/stdio.h
+obj_opt/xmlParser.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/gpgpu_sim_wrapper.o: gpgpu_sim_wrapper.h processor.h XML_Parse.h
+obj_opt/gpgpu_sim_wrapper.o: /usr/include/stdio.h /usr/include/features.h
+obj_opt/gpgpu_sim_wrapper.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/gpgpu_sim_wrapper.o: /usr/include/wchar.h xmlParser.h
+obj_opt/gpgpu_sim_wrapper.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/gpgpu_sim_wrapper.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/gpgpu_sim_wrapper.o: cacti/area.h cacti/cacti_interface.h
+obj_opt/gpgpu_sim_wrapper.o: cacti/const.h /usr/include/stdint.h
+obj_opt/gpgpu_sim_wrapper.o: /usr/include/math.h cacti/basic_circuit.h
+obj_opt/gpgpu_sim_wrapper.o: cacti/decoder.h cacti/area.h cacti/component.h
+obj_opt/gpgpu_sim_wrapper.o: cacti/parameter.h cacti/parameter.h cacti/io.h
+obj_opt/gpgpu_sim_wrapper.o: array.h basic_components.h cacti/const.h
+obj_opt/gpgpu_sim_wrapper.o: cacti/cacti_interface.h cacti/component.h
+obj_opt/gpgpu_sim_wrapper.o: cacti/arbiter.h /usr/include/assert.h
+obj_opt/gpgpu_sim_wrapper.o: cacti/mat.h cacti/decoder.h cacti/wire.h
+obj_opt/gpgpu_sim_wrapper.o: cacti/subarray.h core.h logic.h
+obj_opt/gpgpu_sim_wrapper.o: cacti/basic_circuit.h arch_const.h
+obj_opt/gpgpu_sim_wrapper.o: interconnect.h cacti/subarray.h cacti/wire.h
+obj_opt/gpgpu_sim_wrapper.o: sharedcache.h cacti/crossbar.h noc.h
+obj_opt/gpgpu_sim_wrapper.o: cacti/router.h cacti/crossbar.h cacti/arbiter.h
+obj_opt/gpgpu_sim_wrapper.o: memoryctrl.h iocontrollers.h
+obj_opt/gpgpu_sim_wrapper.o: ../gpgpu-sim/visualizer.h /usr/include/zlib.h
+obj_opt/gpgpu_sim_wrapper.o: /usr/include/zconf.h /usr/include/zlibdefs.h
+obj_opt/gpgpu_sim_wrapper.o: /usr/include/unistd.h /usr/include/getopt.h
+obj_opt/gpgpu_sim_wrapper.o: ../abstract_hardware_model.h
+
+obj_opt/area.o: area.h cacti_interface.h const.h /usr/include/stdint.h
+obj_opt/area.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/area.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/area.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/area.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/area.o: /usr/include/wchar.h /usr/include/math.h basic_circuit.h
+obj_opt/area.o: component.h parameter.h io.h decoder.h /usr/include/assert.h
+obj_opt/bank.o: bank.h component.h parameter.h area.h cacti_interface.h
+obj_opt/bank.o: const.h /usr/include/stdint.h /usr/include/features.h
+obj_opt/bank.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/bank.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/bank.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/bank.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/bank.o: /usr/include/math.h basic_circuit.h io.h decoder.h mat.h
+obj_opt/bank.o: wire.h /usr/include/assert.h subarray.h htree2.h
+obj_opt/mat.o: mat.h component.h parameter.h area.h cacti_interface.h const.h
+obj_opt/mat.o: /usr/include/stdint.h /usr/include/features.h
+obj_opt/mat.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/mat.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/mat.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/mat.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/mat.o: /usr/include/math.h basic_circuit.h io.h decoder.h wire.h
+obj_opt/mat.o: /usr/include/assert.h subarray.h
+obj_opt/main.o: io.h const.h /usr/include/stdint.h /usr/include/features.h
+obj_opt/main.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/main.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/main.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/main.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/main.o: /usr/include/math.h cacti_interface.h
+obj_opt/Ucache.o: /usr/include/time.h /usr/include/features.h
+obj_opt/Ucache.o: /usr/include/xlocale.h /usr/include/math.h area.h
+obj_opt/Ucache.o: cacti_interface.h const.h /usr/include/stdint.h
+obj_opt/Ucache.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/Ucache.o: /usr/include/string.h /usr/include/stdio.h
+obj_opt/Ucache.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/Ucache.o: /usr/include/wchar.h basic_circuit.h bank.h component.h
+obj_opt/Ucache.o: parameter.h io.h decoder.h mat.h wire.h
+obj_opt/Ucache.o: /usr/include/assert.h subarray.h htree2.h Ucache.h router.h
+obj_opt/Ucache.o: crossbar.h arbiter.h nuca.h uca.h /usr/include/pthread.h
+obj_opt/Ucache.o: /usr/include/endian.h /usr/include/sched.h
+obj_opt/io.o: io.h const.h /usr/include/stdint.h /usr/include/features.h
+obj_opt/io.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/io.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/io.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/io.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/io.o: /usr/include/math.h cacti_interface.h area.h basic_circuit.h
+obj_opt/io.o: parameter.h Ucache.h router.h /usr/include/assert.h component.h
+obj_opt/io.o: mat.h decoder.h wire.h subarray.h crossbar.h arbiter.h nuca.h
+obj_opt/technology.o: basic_circuit.h const.h /usr/include/stdint.h
+obj_opt/technology.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/technology.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/technology.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/technology.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/technology.o: /usr/include/wchar.h /usr/include/math.h
+obj_opt/technology.o: cacti_interface.h parameter.h area.h io.h
+obj_opt/basic_circuit.o: basic_circuit.h const.h /usr/include/stdint.h
+obj_opt/basic_circuit.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/basic_circuit.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/basic_circuit.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/basic_circuit.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/basic_circuit.o: /usr/include/wchar.h /usr/include/math.h
+obj_opt/basic_circuit.o: cacti_interface.h parameter.h area.h io.h
+obj_opt/basic_circuit.o: /usr/include/assert.h
+obj_opt/parameter.o: parameter.h area.h cacti_interface.h const.h
+obj_opt/parameter.o: /usr/include/stdint.h /usr/include/features.h
+obj_opt/parameter.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/parameter.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/parameter.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/parameter.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/parameter.o: /usr/include/math.h basic_circuit.h io.h
+obj_opt/decoder.o: area.h cacti_interface.h const.h /usr/include/stdint.h
+obj_opt/decoder.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/decoder.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/decoder.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/decoder.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/decoder.o: /usr/include/wchar.h /usr/include/math.h basic_circuit.h
+obj_opt/decoder.o: decoder.h component.h parameter.h io.h
+obj_opt/decoder.o: /usr/include/assert.h
+obj_opt/component.o: /usr/include/assert.h /usr/include/features.h
+obj_opt/component.o: /usr/include/math.h bank.h component.h parameter.h
+obj_opt/component.o: area.h cacti_interface.h const.h /usr/include/stdint.h
+obj_opt/component.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/component.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/component.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/component.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/component.o: basic_circuit.h io.h decoder.h mat.h wire.h subarray.h
+obj_opt/component.o: htree2.h
+obj_opt/uca.o: /usr/include/math.h /usr/include/features.h uca.h area.h
+obj_opt/uca.o: cacti_interface.h const.h /usr/include/stdint.h
+obj_opt/uca.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/uca.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/uca.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/uca.o: /usr/include/_G_config.h /usr/include/wchar.h basic_circuit.h
+obj_opt/uca.o: bank.h component.h parameter.h io.h decoder.h mat.h wire.h
+obj_opt/uca.o: /usr/include/assert.h subarray.h htree2.h
+obj_opt/subarray.o: /usr/include/math.h /usr/include/features.h
+obj_opt/subarray.o: /usr/include/assert.h subarray.h area.h cacti_interface.h
+obj_opt/subarray.o: const.h /usr/include/stdint.h /usr/include/stdlib.h
+obj_opt/subarray.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/subarray.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/subarray.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/subarray.o: /usr/include/wchar.h basic_circuit.h component.h
+obj_opt/subarray.o: parameter.h io.h
+obj_opt/wire.o: wire.h basic_circuit.h const.h /usr/include/stdint.h
+obj_opt/wire.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/wire.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/wire.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/wire.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/wire.o: /usr/include/wchar.h /usr/include/math.h cacti_interface.h
+obj_opt/wire.o: component.h parameter.h area.h io.h /usr/include/assert.h
+obj_opt/htree2.o: htree2.h basic_circuit.h const.h /usr/include/stdint.h
+obj_opt/htree2.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/htree2.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/htree2.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/htree2.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/htree2.o: /usr/include/wchar.h /usr/include/math.h cacti_interface.h
+obj_opt/htree2.o: component.h parameter.h area.h io.h /usr/include/assert.h
+obj_opt/htree2.o: subarray.h wire.h
+obj_opt/cacti_interface.o: /usr/include/time.h /usr/include/features.h
+obj_opt/cacti_interface.o: /usr/include/xlocale.h /usr/include/math.h area.h
+obj_opt/cacti_interface.o: cacti_interface.h const.h /usr/include/stdint.h
+obj_opt/cacti_interface.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/cacti_interface.o: /usr/include/string.h /usr/include/stdio.h
+obj_opt/cacti_interface.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/cacti_interface.o: /usr/include/wchar.h basic_circuit.h component.h
+obj_opt/cacti_interface.o: parameter.h io.h Ucache.h router.h
+obj_opt/cacti_interface.o: /usr/include/assert.h mat.h decoder.h wire.h
+obj_opt/cacti_interface.o: subarray.h crossbar.h arbiter.h nuca.h
+obj_opt/cacti_interface.o: /usr/include/pthread.h /usr/include/endian.h
+obj_opt/cacti_interface.o: /usr/include/sched.h
+obj_opt/router.o: router.h /usr/include/assert.h /usr/include/features.h
+obj_opt/router.o: basic_circuit.h const.h /usr/include/stdint.h
+obj_opt/router.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/router.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/router.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/router.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/router.o: /usr/include/math.h cacti_interface.h component.h
+obj_opt/router.o: parameter.h area.h io.h mat.h decoder.h wire.h subarray.h
+obj_opt/router.o: crossbar.h arbiter.h
+obj_opt/nuca.o: nuca.h basic_circuit.h const.h /usr/include/stdint.h
+obj_opt/nuca.o: /usr/include/features.h /usr/include/stdlib.h
+obj_opt/nuca.o: /usr/include/alloca.h /usr/include/string.h
+obj_opt/nuca.o: /usr/include/xlocale.h /usr/include/stdio.h
+obj_opt/nuca.o: /usr/include/libio.h /usr/include/_G_config.h
+obj_opt/nuca.o: /usr/include/wchar.h /usr/include/math.h cacti_interface.h
+obj_opt/nuca.o: component.h parameter.h area.h io.h /usr/include/assert.h
+obj_opt/nuca.o: wire.h mat.h decoder.h subarray.h router.h crossbar.h
+obj_opt/nuca.o: arbiter.h Ucache.h
+obj_opt/crossbar.o: crossbar.h /usr/include/assert.h /usr/include/features.h
+obj_opt/crossbar.o: basic_circuit.h const.h /usr/include/stdint.h
+obj_opt/crossbar.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/crossbar.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/crossbar.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/crossbar.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/crossbar.o: /usr/include/math.h cacti_interface.h component.h
+obj_opt/crossbar.o: parameter.h area.h io.h mat.h decoder.h wire.h subarray.h
+obj_opt/arbiter.o: arbiter.h /usr/include/assert.h /usr/include/features.h
+obj_opt/arbiter.o: basic_circuit.h const.h /usr/include/stdint.h
+obj_opt/arbiter.o: /usr/include/stdlib.h /usr/include/alloca.h
+obj_opt/arbiter.o: /usr/include/string.h /usr/include/xlocale.h
+obj_opt/arbiter.o: /usr/include/stdio.h /usr/include/libio.h
+obj_opt/arbiter.o: /usr/include/_G_config.h /usr/include/wchar.h
+obj_opt/arbiter.o: /usr/include/math.h cacti_interface.h component.h
+obj_opt/arbiter.o: parameter.h area.h io.h mat.h decoder.h wire.h subarray.h

@@ -1,0 +1,44 @@
+data1=importdata('power');
+x1 = data1(1:1:700,1);
+x2 = data1(1:1:700,2);
+x3 = data1(1:1:700,3);
+x4 = data1(1:1:700,4);
+x5 = data1(1:1:700,5);
+x6 = data1(1:1:700,6);
+x7 = data1(1:1:700,7);
+x8 = data1(1:1:700,8);
+x9 = data1(1:1:700,9);
+x10 = data1(1:1:700,10);
+x11 = data1(1:1:700,11);
+x12 = data1(1:1:700,12);
+x13 = data1(1:1:700,13);
+x14 = data1(1:1:700,14);
+x15 = data1(1:1:700,15);
+x16 = data1(1:1:700,16);
+
+layer1 = x1 + x2 + x3 + x4;
+layer2 = x5 + x6 + x7 + x8;
+layer3 = x9 + x10 + x11 + x12;
+layer4 = x13 + x14 + x15 + x16;
+
+y1 = mean(layer1)
+y2 = mean(layer2)
+y3 = mean(layer3)
+y4 = mean(layer4)
+
+x1 = mean(x1)
+x2 = mean(x2)
+x3 = mean(x3)
+x4 = mean(x4)
+x5 = mean(x5)
+x6 = mean(x6)
+x7 = mean(x7)
+x8 = mean(x8)
+x9 = mean(x9)
+x10 = mean(x10)
+x11 = mean(x11)
+x12 = mean(x12)
+x13 = mean(x13)
+x14 = mean(x14)
+x15 = mean(x15)
+x16 = mean(x16)

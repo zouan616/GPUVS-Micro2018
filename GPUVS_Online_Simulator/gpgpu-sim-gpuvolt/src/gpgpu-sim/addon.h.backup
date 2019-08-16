@@ -1,0 +1,51 @@
+#ifndef ADDON_H
+#define ADDON_H
+
+#include <iostream>	
+#include <stdio.h>
+#include <fstream>	
+#include "../gpuwattch/gpgpu_sim_wrapper.h"
+#include "shader.h"
+
+class AddOn {
+	public: 
+   		const struct shader_core_config *m_shader_config;
+
+		FILE * voltage_file;
+		FILE * per_core_power_file;
+		FILE * power_file;
+		FILE * stall_file;
+	 	bool voltage_model_initialized;
+		unsigned long long count;
+		unsigned cycle;
+
+		unsigned long pipeline_stall_core[100];
+		unsigned long raw_stall_core[100];
+		unsigned long idle_stall_core[100];
+		unsigned long mempipefull_stall_core[100];
+
+		// pipe stall stats
+		bool sm_issue_stalled[100];
+		FILE * pipe_dump_file;
+		bool dump_pipeline;
+		bool sm_issued[100][2];
+		unsigned sm_sched_index[100];
+		unsigned sm_issued_warpid[100][2];
+		unsigned sm_issued_pc[100][2];
+		char* sm_issued_insn[100][2];
+
+
+		unsigned long long global_cycle_count;
+
+		//AddOn();
+		AddOn(const struct shader_core_config *);
+		void power_cycle(gpgpu_sim_wrapper *);
+		void SetSMIssueStalled(unsigned, bool);
+		bool IsSMIssueStalled(unsigned);
+		void dump(double , double);
+		void stall_dump();
+		void dump_pipe();
+		void ClearPipeStats();
+};
+
+#endif /* ADDON_H */

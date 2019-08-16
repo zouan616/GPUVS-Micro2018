@@ -1,0 +1,53 @@
+
+	Building GPGPU-Sim version 3.2.0+edits (build 15585) with CUDA version 4.0
+
+if [ ! -d lib/4000/release ]; then mkdir -p lib/4000/release; fi;
+if [ ! -d build/4000/release/libcuda ]; then mkdir -p build/4000/release/libcuda; fi;
+if [ ! -d build/4000/release/cuda-sim ]; then mkdir -p build/4000/release/cuda-sim; fi;
+if [ ! -d build/4000/release/cuda-sim/decuda_pred_table ]; then mkdir -p build/4000/release/cuda-sim/decuda_pred_table; fi;
+if [ ! -d build/4000/release/gpgpu-sim ]; then mkdir -p build/4000/release/gpgpu-sim; fi;
+if [ ! -d build/4000/release/libopencl ]; then mkdir -p build/4000/release/libopencl; fi;
+if [ ! -d build/4000/release/intersim ]; then mkdir -p build/4000/release/intersim; fi;
+if [ ! -d build/4000/release/cuobjdump_to_ptxplus ]; then mkdir -p build/4000/release/cuobjdump_to_ptxplus; fi;
+if [ ! -d /home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpuwattch//obj_opt ] && [ ! -n /home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpuwattch/ ]; then mkdir -p /home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpuwattch//obj_opt; fi;
+make -C ./src/cuda-sim/ depend
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/cuda-sim'
+touch Makefile.makedepend
+makedepend -fMakefile.makedepend -p../../build/4000/release/cuda-sim/ cuda_device_printf.cc cuda-sim.cc instructions.cc memory.cc ptx_ir.cc ptx_loader.cc ptx_parser.cc ptx_sim.cc ptx-stats.cc 2> /dev/null
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/cuda-sim'
+make -C ./src/cuda-sim/
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/cuda-sim'
+ar rcs ../../build/4000/release/cuda-sim/libgpgpu_ptx_sim.a ../../build/4000/release/cuda-sim/ptx.tab.o ../../build/4000/release/cuda-sim/lex.ptx_.o ../../build/4000/release/cuda-sim/ptxinfo.tab.o ../../build/4000/release/cuda-sim/lex.ptxinfo_.o ../../build/4000/release/cuda-sim/ptx_parser.o ../../build/4000/release/cuda-sim/ptx_loader.o ../../build/4000/release/cuda-sim/cuda_device_printf.o ../../build/4000/release/cuda-sim/instructions.o ../../build/4000/release/cuda-sim/cuda-sim.o ../../build/4000/release/cuda-sim/ptx_ir.o ../../build/4000/release/cuda-sim/ptx_sim.o  ../../build/4000/release/cuda-sim/memory.o ../../build/4000/release/cuda-sim/ptx-stats.o ../../build/4000/release/cuda-sim/decuda_pred_table/decuda_pred_table.o ../../build/4000/release/cuda-sim/ptx.tab.o ../../build/4000/release/cuda-sim/lex.ptx_.o ../../build/4000/release/cuda-sim/ptxinfo.tab.o ../../build/4000/release/cuda-sim/lex.ptxinfo_.o
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/cuda-sim'
+make -C ./src/gpgpu-sim/ depend
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpgpu-sim'
+touch Makefile.makedepend
+makedepend -fMakefile.makedepend -p../../build/4000/release/gpgpu-sim/ addrdec.cc dram.cc dram_sched.cc gpu-cache.cc gpu-misc.cc gpu-sim.cc histogram.cc icnt_wrapper.cc l2cache.cc mem_fetch.cc mem_latency_stat.cc power_interface.cc power_stat.cc scoreboard.cc shader.cc stack.cc stat-tool.cc visualizer.cc 2> /dev/null
+make[1]: `depend' is up to date.
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpgpu-sim'
+make -C ./src/gpgpu-sim/
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpgpu-sim'
+touch Makefile.makedepend
+makedepend -fMakefile.makedepend -p../../build/4000/release/gpgpu-sim/ addrdec.cc dram.cc dram_sched.cc gpu-cache.cc gpu-misc.cc gpu-sim.cc histogram.cc icnt_wrapper.cc l2cache.cc mem_fetch.cc mem_latency_stat.cc power_interface.cc power_stat.cc scoreboard.cc shader.cc stack.cc stat-tool.cc visualizer.cc 2> /dev/null
+ar rcs  ../../build/4000/release/gpgpu-sim/libgpu_uarch_sim.a ../../build/4000/release/gpgpu-sim/addrdec.o ../../build/4000/release/gpgpu-sim/dram.o ../../build/4000/release/gpgpu-sim/dram_sched.o ../../build/4000/release/gpgpu-sim/gpu-cache.o ../../build/4000/release/gpgpu-sim/gpu-misc.o ../../build/4000/release/gpgpu-sim/gpu-sim.o ../../build/4000/release/gpgpu-sim/histogram.o ../../build/4000/release/gpgpu-sim/icnt_wrapper.o ../../build/4000/release/gpgpu-sim/l2cache.o ../../build/4000/release/gpgpu-sim/mem_fetch.o ../../build/4000/release/gpgpu-sim/mem_latency_stat.o ../../build/4000/release/gpgpu-sim/power_interface.o ../../build/4000/release/gpgpu-sim/power_stat.o ../../build/4000/release/gpgpu-sim/scoreboard.o ../../build/4000/release/gpgpu-sim/shader.o ../../build/4000/release/gpgpu-sim/stack.o ../../build/4000/release/gpgpu-sim/stat-tool.o ../../build/4000/release/gpgpu-sim/visualizer.o
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/gpgpu-sim'
+make "CREATELIBRARY=1" "DEBUG=0" -C ./src/intersim
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/intersim'
+g++  -O3 -g  -fPIC -c configlex.cpp -o configlex.o
+g++  -O3 -g  -fPIC  -c -o config_tab.o config_tab.cpp
+ar rcs ../../build/4000/release/intersim/libintersim.a ../../build/4000/release/intersim/interconnect_interface.o ../../build/4000/release/intersim/config_utils.o ../../build/4000/release/intersim/booksim_config.o ../../build/4000/release/intersim/module.o ../../build/4000/release/intersim/router.o ../../build/4000/release/intersim/iq_router.o ../../build/4000/release/intersim/event_router.o ../../build/4000/release/intersim/vc.o ../../build/4000/release/intersim/routefunc.o ../../build/4000/release/intersim/traffic.o ../../build/4000/release/intersim/allocator.o ../../build/4000/release/intersim/maxsize.o ../../build/4000/release/intersim/network.o ../../build/4000/release/intersim/singlenet.o ../../build/4000/release/intersim/kncube.o ../../build/4000/release/intersim/fly.o ../../build/4000/release/intersim/trafficmanager.o ../../build/4000/release/intersim/random_utils.o ../../build/4000/release/intersim/buffer_state.o ../../build/4000/release/intersim/stats.o ../../build/4000/release/intersim/pim.o ../../build/4000/release/intersim/islip.o ../../build/4000/release/intersim/loa.o ../../build/4000/release/intersim/wavefront.o ../../build/4000/release/intersim/misc_utils.o ../../build/4000/release/intersim/credit.o ../../build/4000/release/intersim/outputset.o ../../build/4000/release/intersim/flit.o ../../build/4000/release/intersim/selalloc.o ../../build/4000/release/intersim/arbiter.o ../../build/4000/release/intersim/injection.o ../../build/4000/release/intersim/rng_wrapper.o ../../build/4000/release/intersim/rng_double_wrapper.o ../../build/4000/release/intersim/statwraper.o configlex.o config_tab.o
+mv configlex.o ../../build/4000/release/intersim/
+mv config_tab.o ../../build/4000/release/intersim/
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src/intersim'
+make -C ./src/ depend
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src'
+touch Makefile.makedepend
+makedepend -fMakefile.makedepend -p../build/4000/release/ abstract_hardware_model.cc debug.cc gpgpusim_entrypoint.cc gpu-sim_micro.cc option_parser.cc shader_micro.cc stream_manager.cc trace.cc 2> /dev/null
+make[1]: `depend' is up to date.
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src'
+make -C ./src/
+make[1]: Entering directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src'
+touch Makefile.makedepend
+makedepend -fMakefile.makedepend -p../build/4000/release/ abstract_hardware_model.cc debug.cc gpgpusim_entrypoint.cc gpu-sim_micro.cc option_parser.cc shader_micro.cc stream_manager.cc trace.cc 2> /dev/null
+g++  -O3 -g3 -fPIC -Wall -DDEBUG -DCUDART_VERSION=4000 -std=c++0x -std=c++0x -DTRACING_ON=1 -o ../build/4000/release/gpu-sim_micro.o -c gpu-sim_micro.cc
+make[1]: Leaving directory `/home/anzou/GPUVS_Online_Simulator/gpgpu-sim-gpuvolt/src'

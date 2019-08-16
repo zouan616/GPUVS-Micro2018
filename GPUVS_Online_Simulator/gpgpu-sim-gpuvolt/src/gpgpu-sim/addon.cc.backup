@@ -1,0 +1,191 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#include "addon.h"
+#include "../gpuwattch/processor.h"
+
+#include "LumpedVoltModel.h"
+#define LumpedVDD 1.0
+//#define Use_Lumped_Voltage
+#undef Use_Lumped_Voltage
+
+using namespace std;
+
+AddOn::AddOn(const struct shader_core_config * p) {
+	voltage_file 	= fopen("lumped_voltage_record.txt", "w");
+	power_file  	= fopen("lumped_power_record.txt", "w");
+	per_core_power_file  = fopen("per_core_power_record.txt", "w");
+	stall_file 		= fopen("analysis_dump.log", "w");
+	InitLumpedVoltModel(LumpedVDD);
+
+	assert(voltage_file != NULL);
+	assert(power_file != NULL);
+	assert(per_core_power_file != NULL);
+	count = 0;
+	cycle = 1;
+	//init_voltage_model();
+	
+	for (unsigned i  = 0; i < 100; i++){
+		pipeline_stall_core[i] 		= 0;
+		raw_stall_core[i]  			= 0;
+		idle_stall_core[i]			= 0;
+		mempipefull_stall_core[i] 	= 0;
+		sm_issue_stalled[i] = false;
+		sm_sched_index[i] = 0;	
+
+		for( unsigned j=0; j<2; j++) {
+			sm_issued[i][j] = false;
+			sm_issued_warpid[i][j] = 0;
+			sm_issued_pc[i][j] = 0;
+			sm_issued_insn[i][j] = new char[1024];
+		}
+	}
+	m_shader_config = p;
+	global_cycle_count = 1;
+
+	dump_pipeline = false;
+	pipe_dump_file = NULL;
+
+}
+
+void AddOn::SetSMIssueStalled(unsigned id, bool value) {
+	sm_issue_stalled[id]=value;
+}
+
+bool AddOn::IsSMIssueStalled( unsigned id ) {
+	return sm_issue_stalled[id];
+}
+/*AddOn::AddOn() {
+	voltage_file 	= fopen("lumped_voltage_record.txt", "w");
+	power_file  	= fopen("lumped_power_record.txt", "w");
+	stall_file 		= fopen("analysis_dump.log", "w");
+	InitLumpedVoltModel(LumpedVDD);
+
+	assert(voltage_file != NULL);
+	assert(power_file != NULL);
+	count = 0;
+	cycle = 1;
+	//init_voltage_model();
+	
+	for (unsigned i  = 0; i < 100; i++){
+		pipeline_stall_core[i] 		= 0;
+		raw_stall_core[i]  			= 0;
+		idle_stall_core[i]			= 0;
+		mempipefull_stall_core[i] 	= 0;
+	}
+}
+*/
+
+void AddOn::power_cycle ( gpgpu_sim_wrapper * wrapper ) {
+	stall_dump();
+	Processor * proc = wrapper->proc;
+	double static_pwr_t=(proc->XML->sys.longer_channel_device? proc->power.readOp.longer_channel_leakage:proc->power.readOp.leakage)+proc->power.readOp.gate_leakage;
+	double tot_pwr_t = static_pwr_t + proc->rt_power.readOp.dynamic;
+
+	double lumped_volt;
+#ifdef Use_Lumped_Voltage
+	lumped_volt=LumpedVoltCompute(tot_pwr_t);
+#else 
+	lumped_volt=0;
+#endif
+	count++;
+
+	wrapper->print_per_core_power(per_core_power_file);
+#ifdef DUMP_INFO
+	dump(tot_pwr_t, lumped_volt);
+	dump_pipe();
+#endif
+}
+
+void AddOn::dump( double power, double voltage) {
+
+	fprintf(power_file, "%5.3f\n", power);
+	fprintf(voltage_file, "%5.3f\n", voltage);
+
+	
+	if ( count % 5000 == 0) {
+		fflush(power_file);
+		fflush(voltage_file);
+		fflush(stall_file);
+		fflush(per_core_power_file);
+	}
+}
+
+void AddOn::stall_dump( ) {
+	unsigned tmp[4] = {0};
+	unsigned count[4] = {0};
+
+	for (unsigned i=0;i<m_shader_config->num_shader();i++) {
+
+		if (mempipefull_stall_core[i] ==  2){
+			tmp[0] |= (1 << i);
+			count[0] ++;
+		}
+
+		if (raw_stall_core[i] == 2) {
+			tmp[1] |= (1 << i);
+			count[1] ++;
+		}
+
+		if (idle_stall_core[i] == 2) {
+			tmp[2] |= (1 << i);
+			count[2] ++;
+		}
+	}
+
+	fprintf(stall_file,"%d %d\t", tmp[0], count[0]);
+	fprintf(stall_file,"%d %d\t", tmp[1], count[1]);
+	fprintf(stall_file,"%d %d\n", tmp[2], count[2]);
+
+	for (unsigned i=0;i<m_shader_config->num_shader();i++) {
+		pipeline_stall_core[i] = 0;
+		raw_stall_core[i] = 0;
+		idle_stall_core[i] = 0;
+		mempipefull_stall_core[i] = 0;
+	}
+	
+}
+
+//=======================================================================
+void AddOn::ClearPipeStats( ) {
+	for (unsigned i=0;i<m_shader_config->num_shader();i++) {
+		sm_issue_stalled[i] = true;	
+		sm_sched_index[i] = 0;	
+		for ( unsigned j=0; j<2; j++ ) {
+			sm_issued[i][j] = false;	
+		}
+	}
+}
+
+//=======================================================================
+void AddOn::dump_pipe( ) {
+	if ( pipe_dump_file == NULL )
+		return;
+
+	for(unsigned i=0;i<100; i++)
+		fprintf(pipe_dump_file, "=");
+	fprintf(pipe_dump_file, "\n\e[1;31mCycle %d\e[0m\n", global_cycle_count);
+	
+	for (unsigned i=0;i<m_shader_config->num_shader();i++) {
+		fprintf(pipe_dump_file, "  SM%d: ", i);
+		if ( ! sm_issued[i][0] && ! sm_issued[i][1] )  {
+			fprintf(pipe_dump_file, "\e[1;34mstall\e[0m\n");
+			assert( sm_issue_stalled[i]);
+		} else {
+			for ( unsigned j=0; j<2; j++ ) {
+				if ( sm_issued[i][j] ) {
+				if (j)
+					fprintf(pipe_dump_file, "\e[1;34mPC=0x%4X; W%d; %20s: \e[0m", sm_issued_pc[i][j], sm_issued_warpid[i][j], sm_issued_insn[i][j]);
+				else 
+					fprintf(pipe_dump_file, "\e[1;33mPC=0x%4X; W%d; %20s: \e[0m", sm_issued_pc[i][j], sm_issued_warpid[i][j], sm_issued_insn[i][j]);
+				}
+			}
+			fprintf(pipe_dump_file, "\n");
+		}
+	}
+
+	if ( global_cycle_count % 5000 == 0) {
+		fflush(pipe_dump_file);
+	}
+
+}
