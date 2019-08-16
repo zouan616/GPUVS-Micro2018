@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Detailed_4x4"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Detailed_4x4">
+				<Option output="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/cmake-build-debug/Detailed_4x4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/."/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 Detailed_4x4"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Detailed_4x4/fast">
+				<Option output="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/cmake-build-debug/Detailed_4x4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/."/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 Detailed_4x4/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/anzou/Voltage\ Stacking\ Circuit\ Simulator/Detailed\ 4x4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/Chapter3_current_breakdown.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/GetSMPower.cc">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/GetSMPower.h">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/GreedinReverse.cc">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/GreedinReverse.h">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/GreedinReverseWithUncertainty.cc">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/GreedinReverseWithUncertainty.h">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/IVR_Power_loss.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/IVR_area.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/IVR_box.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/IVR_eff.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/IVR_power.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/Power_trace_generator.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/Random_power_trace_generator.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/VS_IVR.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/Z_load/voltage_stacking_circuit_simulator.cc">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/architecture_noise_breakdown.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/architecture_power_breakdown.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/bode.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/chapter3_noise_breakdown.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/chapter_51_current_breakdown.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/chapter_52_current_breakdown.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/efficiency_compare_peak.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/frequency_and_area_IVR.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/frequency_and_area_dis.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/frequency_area.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/histograph.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/identify_worst_case.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/identify_worst_case2.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/isaxes.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/ischild.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/isfigure.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/linspecer.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/matlabplot.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/my_boxplot.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/myboxplot.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/myfft.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_breakdown.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_contribution_magni.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_contribution_magni_vs_single.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_contribution_ratio.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_contribution_ratio_vs_single.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_distribution.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_distribution2.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/paper_figure.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/paper_plot_process.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/paper_plot_process_noise.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/paper_plot_start.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/paper_plot_start_noise.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/performance_overhead.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_decompose.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_filter.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_noise_breakdown.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_power_breakdown.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_with_arrow.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_with_arrow_Test.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/power.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/power_calculate.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/power_plot.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/real_power_trace_generator.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/rotateticklabel.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/saturate.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/sharedspice.h">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/sin.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/sin_plot.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/stem_self.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/technology_efficiency.m">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/voltage_stacking_circuit_simulator.cc">
+			<Option target="Detailed_4x4"/>
+		</Unit>
+		<Unit filename="/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

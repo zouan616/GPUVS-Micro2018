@@ -1,0 +1,76 @@
+cmake_minimum_required(VERSION 3.10)
+project(Detailed_4x4)
+
+set(CMAKE_CXX_STANDARD 11)
+
+include_directories(.)
+
+add_executable(Detailed_4x4
+        Z_load/voltage_stacking_circuit_simulator.cc
+        architecture_noise_breakdown.m
+        architecture_power_breakdown.m
+        bode.m
+        Chapter3_current_breakdown.m
+        chapter3_noise_breakdown.m
+        chapter_51_current_breakdown.m
+        chapter_52_current_breakdown.m
+        efficiency_compare_peak.m
+        frequency_and_area_dis.m
+        frequency_and_area_IVR.m
+        frequency_area.m
+        GetSMPower.cc
+        GetSMPower.h
+        GreedinReverse.cc
+        GreedinReverse.h
+        GreedinReverseWithUncertainty.cc
+        GreedinReverseWithUncertainty.h
+        histograph.m
+        identify_worst_case.m
+        identify_worst_case2.m
+        isaxes.m
+        ischild.m
+        isfigure.m
+        IVR_area.m
+        IVR_box.m
+        IVR_eff.m
+        IVR_power.m
+        IVR_Power_loss.m
+        linspecer.m
+        matlabplot.m
+        my_boxplot.m
+        myboxplot.m
+        myfft.m
+        noise_breakdown.m
+        noise_contribution_magni.m
+        noise_contribution_magni_vs_single.m
+        noise_contribution_ratio.m
+        noise_contribution_ratio_vs_single.m
+        noise_distribution.m
+        noise_distribution2.m
+        paper_figure.m
+        paper_plot_process.m
+        paper_plot_process_noise.m
+        paper_plot_start.m
+        paper_plot_start_noise.m
+        performance_overhead.m
+        plot_decompose.m
+        plot_filter.m
+        plot_noise_breakdown.m
+        plot_power_breakdown.m
+        plot_with_arrow.m
+        plot_with_arrow_Test.m
+        power.m
+        power_calculate.m
+        power_plot.m
+        Power_trace_generator.m
+        Random_power_trace_generator.m
+        real_power_trace_generator.m
+        rotateticklabel.m
+        saturate.m
+        sharedspice.h
+        sin.m
+        sin_plot.m
+        stem_self.m
+        technology_efficiency.m
+        voltage_stacking_circuit_simulator.cc
+        VS_IVR.m)

@@ -1,0 +1,16 @@
+R = 0.015;
+
+data1=importdata('on_power_high');
+x1 = data1(1:1:80000,1);
+y1 = data1(1:1:80000,2);
+
+data2=importdata('on_power_low');
+x2 = data2(1:1:80000,1);
+y2 = data2(1:1:80000,2);
+
+
+y = y1 - y2;
+
+y = y.*1e5;
+y = y.*y.*R;
+y1 = mean(y)

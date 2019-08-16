@@ -1,0 +1,126 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/Chapter3_current_breakdown.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/IVR_Power_loss.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/IVR_area.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/IVR_box.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/IVR_eff.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/IVR_power.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/Power_trace_generator.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/Random_power_trace_generator.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/VS_IVR.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/architecture_noise_breakdown.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/architecture_power_breakdown.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/bode.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/chapter3_noise_breakdown.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/chapter_51_current_breakdown.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/chapter_52_current_breakdown.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/efficiency_compare_peak.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/frequency_and_area_IVR.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/frequency_and_area_dis.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/frequency_area.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/histograph.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/identify_worst_case.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/identify_worst_case2.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/isaxes.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/ischild.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/isfigure.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/linspecer.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/matlabplot.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/my_boxplot.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/myboxplot.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/myfft.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_breakdown.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_contribution_magni.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_contribution_magni_vs_single.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_contribution_ratio.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_contribution_ratio_vs_single.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_distribution.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/noise_distribution2.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/paper_figure.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/paper_plot_process.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/paper_plot_process_noise.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/paper_plot_start.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/paper_plot_start_noise.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/performance_overhead.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_decompose.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_filter.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_noise_breakdown.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_power_breakdown.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_with_arrow.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/plot_with_arrow_Test.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/power.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/power_calculate.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/power_plot.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/real_power_trace_generator.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/rotateticklabel.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/saturate.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/sin.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/sin_plot.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/stem_self.m
+
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/technology_efficiency.m
+

@@ -1,0 +1,3 @@
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/anzou/Voltage Stacking Circuit Simulator/Detailed 4x4/cmake-build-debug/CMakeFiles/Detailed_4x4.dir
